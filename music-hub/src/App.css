@@ -1,14 +1,58 @@
 
+.App{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black
+}
 
 .Artist.container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+header.Artist-header {
+  text-align: center;
+  flex: 0 0 100%
+}
+
+#artist-img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.Artist-header h1 {
+  color: aliceblue;
 }
 
 
 .Album.container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 10px 5px 5px #bbb9b9;
+  margin: 10px;
+}
+
+#album-img{
+  width: 150px;
+  border-radius: 5px;
+}
+
+.album-info.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#album-name {
+  font-weight: bolder;
 }
 /*
 .App-header {
