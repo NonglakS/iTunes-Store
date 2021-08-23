@@ -2,6 +2,7 @@ import "./App.css";
 import Artist from "./Components/Artist";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { ImSearch } from 'react-icons/im';
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -12,7 +13,7 @@ function App() {
     console.log(e.target)
     if(e.key === "Enter"){
       setArtist(searchTerm);
-      document.querySelector("#search input").value="";
+      document.querySelector("#search").value="";
 
     } else {
       setSearchTerm(e.target.value);
@@ -21,10 +22,10 @@ function App() {
 
   useEffect(() => {
     async function getAlbum(terms) {
-      let params = terms.replace(" ", "+");
+      let params = terms.replaceAll(" ", "+");
       console.log(params);
       const { data } = await axios.get(
-        `https://itunes.apple.com/search?term=${params}&media=music&entity=album&limit=200`
+        `https://itunes.apple.com/search?term=${params}&media=music&entity=album&limit=20`
       );
       setAlbums(data.results);
     }
@@ -34,9 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <div id="search">
-      <input type="text" placeholder="Search.." onKeyPress={(e)=>{search(e)}}/>
-      </div>
+      <input id="search" type="text" placeholder="Search.." onKeyPress={(e)=>{search(e)}}/>
       {albums.length > 0 && <Artist albums={albums} />}</div>
   );
 }
