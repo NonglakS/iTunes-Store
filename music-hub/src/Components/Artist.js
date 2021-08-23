@@ -8,7 +8,6 @@ function Artist({ albums }) {
         </div>
         <h1>{albums[0].artistName}</h1>
       </header>
-
       {albums.map((data) => {
         return <Album album={data} />;
       })}

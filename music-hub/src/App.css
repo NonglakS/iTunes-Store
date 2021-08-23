@@ -3,18 +3,26 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  flex-wrap: wrap;
 }
 
+#search {
+  justify-content: flex-end;
+}
 .Artist.container {
   display: flex;
   justify-content: center;
   justify-items: center;
   flex-wrap: wrap;
+  margin: 30px;
+
 }
 
 header.Artist-header {
   text-align: -webkit-center;
   flex: 0 0 100%;
+
 }
 
 #artist-img {
@@ -27,7 +35,7 @@ header.Artist-header {
   width: 95%;
   border-radius: 50%;
   margin: 2%;
-  border: ;
+
 }
 .Artist-header h1 {
   color: aliceblue;
@@ -42,11 +50,17 @@ header.Artist-header {
   align-items: center;
   background-color: white;
   box-shadow: 10px 5px 5px #bbb9b9;
-  margin: 10px;
+  border-radius: 3px;
+  margin: 20px;
   width: 200px;
   padding: 10px;
+  cursor: pointer;
 }
 
+.Album.container:hover {
+  /* width: 200px; */
+  box-shadow: 10px 5px 5px rgb(223, 131, 56);
+}
 #album-img {
   width: 150px;
   border-radius: 5px;
@@ -56,7 +70,7 @@ header.Artist-header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-top: 5px;
+  margin-top: 40px;
   font-size: x-small;
 }
 .album-name {

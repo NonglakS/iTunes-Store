@@ -5,22 +5,39 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [albums, setAlbums] = useState([]);
+  const [artist, setArtist] = useState("selena gomez");
+  const [searchTerm, setSearchTerm] = useState("")
+
+  function search (e){
+    console.log(e.target)
+    if(e.key === "Enter"){
+      setArtist(searchTerm);
+      document.querySelector("#search input").value="";
+
+    } else {
+      setSearchTerm(e.target.value);
+    }
+  }
 
   useEffect(() => {
     async function getAlbum(terms) {
-      let params = terms.join("+");
+      let params = terms.replace(" ", "+");
       console.log(params);
       const { data } = await axios.get(
-        `https://itunes.apple.com/search?term=${params}&media=music&entity=album&limit=10`
+        `https://itunes.apple.com/search?term=${params}&media=music&entity=album&limit=200`
       );
       setAlbums(data.results);
     }
 
-    getAlbum(["selena", "gomez"]);
-  }, []);
+    getAlbum(artist);
+  }, [artist]);
 
   return (
-    <div className="App">{albums.length > 0 && <Artist albums={albums} />}</div>
+    <div className="App">
+      <div id="search">
+      <input type="text" placeholder="Search.." onKeyPress={(e)=>{search(e)}}/>
+      </div>
+      {albums.length > 0 && <Artist albums={albums} />}</div>
   );
 }
 
