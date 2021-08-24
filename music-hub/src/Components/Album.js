@@ -30,7 +30,7 @@ function Album({ album }) {
           onClick={showTrack}
         />
       </div>
-      {expand && <PlayListModal tracks={tracks} setExpand={setExpand} />}
+      {(expand && tracks.length > 0) && <PlayListModal tracks={tracks} setExpand={setExpand} />}
     </>
   );
 }

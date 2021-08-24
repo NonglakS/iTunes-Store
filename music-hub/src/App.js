@@ -22,7 +22,7 @@ function App() {
       let params = terms.replaceAll(" ", "+");
       try {
         const { data } = await axios.get(
-          `https://itunes.apple.com/search?term=${params}&media=music&entity=album&limit=20`
+          `https://itunes.apple.com/search?term=${params}&media=music&entity=album&limit=200`
         );
         setAlbums(data.results);
       } catch (e) {
