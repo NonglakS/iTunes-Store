@@ -26,3 +26,6 @@ To run the test:
 #### Users can listen to preview songs on each album.
 
 <img src="https://github.com/NonglakS/iTunes-Store/blob/main/music-hub/modal.png"/>
+
+
+API Source:https://affiliate.itunes.apple.com/resources/documentation/itunes-store-webservice-search-api/)
