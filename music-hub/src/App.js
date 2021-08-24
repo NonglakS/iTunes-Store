@@ -9,7 +9,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   function search(e) {
-    console.log(e.target);
     if (e.key === "Enter") {
       setArtist(searchTerm);
       document.querySelector("#search").value = "";
