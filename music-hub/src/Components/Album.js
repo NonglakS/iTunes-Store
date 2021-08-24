@@ -1,16 +1,17 @@
 import { IoMdArrowDropdownCircle } from 'react-icons/io'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PlayListModal from './PlayListModal'
-import fetchData from './../Utils'
+import Utils from './../Utils'
 function Album({ album }) {
 
   const [expand, setExpand] = useState(false)
   const [tracks, setTracks] = useState([]);
 
   async function showTrack() {
-    setExpand(true);
-    const songs = await fetchData.getSongs(album.collectionId);
+    const songs = await Utils.getSongs(album.collectionId);
+    console.log(songs)
     setTracks(songs)
+    setExpand(true);
   }
 
 
@@ -22,8 +23,8 @@ function Album({ album }) {
       <div className="album-info container">
         <div className="album-name">{album.collectionName}</div>
         <div>{album.releaseDate.slice(0, 4)}</div>
-        <IoMdArrowDropdownCircle className="expand" onClick={showTrack} />
       </div>
+        <IoMdArrowDropdownCircle className="expand" size={20} onClick={showTrack} />
     </div>
       {expand && <PlayListModal tracks={tracks} setExpand={setExpand}/>}
       </>

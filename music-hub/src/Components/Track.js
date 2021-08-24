@@ -1,11 +1,27 @@
+import {useState} from 'react';
+import Utils from './../Utils'
 function Track({ song }) {
-  return (
-    <div className="Track container">
+  const [preview, setPreviewTag] = useState(false)
 
-      <div className="trackName">trackName</div>
-      <div className="audio-player"><audio src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/15/f6/52/15f652d8-09cd-9f08-8f0e-76fdeeee0b00/mzaf_8062575223642339953.plus.aac.p.m4a" controls> I'm sorry. You're browser doesn't support HTML5 <code>audio</code>. </audio></div>
-      {/* <div className="trackTime">trackTime</div> */}
+function setPreview (){
+  setPreviewTag(true)
+}
+
+function showTime (){
+  setPreviewTag(false)
+}
+
+  return (
+    <>
+    <div className="Track container" onMouseOver={setPreview}  onMouseLeave={showTime}>
+
+      <div className="track-name">{song.trackName}</div>
+      <div className="audio-player" ><audio src={song.previewUrl} type="audio/mpeg" controls controlslist="nodownload"> I'm sorry. You're browser doesn't support HTML5 <code>audio</code>.</audio></div>
+      {preview ?
+        <div className="preview">preview</div>
+      :  <div className="time">{Utils.convertToMin(song.trackTimeMillis)}</div>}
     </div>
+    </>
 
   );
 }

@@ -88,6 +88,7 @@ header.Artist-header {
   margin-top: 40px;
   font-size: x-small;
 }
+
 .album-name {
   font-weight: bold;
 }
@@ -106,6 +107,7 @@ header.Artist-header {
 
 svg.expand {
   cursor: pointer;
+  align-self: flex-end;
 }
 
 .PlayListModal {
@@ -118,12 +120,16 @@ svg.expand {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
+
+
 .model-content {
-  width: 500px;
+  width: 700px;
   background-color: white;
   color: black;
   padding: 20px;
+  border-radius:3px;
 }
 
 .Album-header {
@@ -135,6 +141,50 @@ svg.expand {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgb(105, 102, 102, 0.5) ;
+  margin: 10px 0;
 
+
+}
+
+
+
+.track-name{
+  font-size: x-small;
+  width: 170px;
+}
+
+.time,.preview  {
+  width: 50px;
+  font-size: x-small;
+  display: flex;
+}
+
+audio {
+  height: 30px;
+  display: flex;
+
+}
+
+audio::-webkit-media-controls-enclosure{
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+.preview {
+  color:red
+}
+
+.close-modal {
+  cursor: pointer;
+  margin-left:95%;
 }

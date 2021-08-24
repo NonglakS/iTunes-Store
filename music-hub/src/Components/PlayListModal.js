@@ -1,11 +1,21 @@
 import Track from './Track'
-function PlayListModal({tracks, setExpand}) {
+import { AiFillCloseCircle } from 'react-icons/ai';
+function PlayListModal({ tracks, setExpand }) {
   return (
     <div className="PlayListModal container">
       <div className="model-content">
-      <header className="Album-header">When the sun goes down</header>
-      <Track/>
-      <button className="close-modal" onClick={()=>setExpand(false)}> close </button>
+      <AiFillCloseCircle className="close-modal" onClick={() => setExpand(false)} />
+        <header className="Album-header">{`${tracks[0].collectionName}'s play list`}
+         </header>
+
+
+        {tracks.slice(1, tracks.length).map(track => {
+
+          return <Track song={track} />
+
+        })}
+
+
       </div>
     </div>
   );
