@@ -14,6 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 User Stories:
 - Users can search by artist name to view the albums.
-<img src=".index.png"/>
+<img src="https://github.com/NonglakS/iTunes-Store/blob/main/music-hub/index.png"/>
 -Users can listen to preview songs on each album
-<img src=".index.png"/>
+<img src="https://github.com/NonglakS/iTunes-Store/blob/main/music-hub/modal.png"/>
