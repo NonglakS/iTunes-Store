@@ -1,4 +1,6 @@
+import "./Artist.css";
 import Album from "./Album";
+
 function Artist({ albums }) {
   return (
     <div className="Artist container">
@@ -9,7 +11,7 @@ function Artist({ albums }) {
         <h1>{albums[0].artistName}</h1>
       </header>
       {albums.map((data) => {
-        return <Album album={data} />;
+        return <Album album={data} key={data.collectionId} />;
       })}
     </div>
   );

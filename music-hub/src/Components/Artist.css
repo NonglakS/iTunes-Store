@@ -1,0 +1,27 @@
+.Artist.container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+
+header.Artist-header {
+  text-align: -webkit-center;
+  flex: 0 0 100%;
+}
+
+#artist-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, red, orange);
+}
+#artist-img img {
+  width: 95%;
+  border-radius: 50%;
+  margin: 2%;
+}
+.Artist-header h1 {
+  color: aliceblue;
+}
